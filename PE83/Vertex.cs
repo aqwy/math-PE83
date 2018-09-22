@@ -8,11 +8,11 @@ namespace PE83
 {
     class Vertex
     {
-        public char lable;
+        public string vertName;
         public bool isInTree;
-        public Vertex(char l)
+        public Vertex(string vname)
         {
-            lable = l;
+            vertName = vname;
             isInTree = false;
         }
     }

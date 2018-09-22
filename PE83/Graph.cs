@@ -10,7 +10,7 @@ namespace PE83
     class Graph
     {
         private readonly int MAX_VERTS = 80;
-        private readonly int INFINITY = 1000000;
+        private readonly int INFINITY = 999999999;
         private Vertex[] vertexList;
         private int[,] adjMat;
         private int nVerts;
@@ -53,7 +53,7 @@ namespace PE83
             r.Close();
             return grid;
         }
-        public void addVertex(char lab)
+        public void addVertex(string lab)
         {
             vertexList[nVerts++] = new Vertex(lab);
         }
@@ -140,12 +140,12 @@ namespace PE83
         {
             for (int i = 0; i < nVerts; i++)
             {
-                Console.Write(vertexList[i].lable + "=");
+                Console.Write(vertexList[i].vertName + "=");
                 if (sPath[i].distance == INFINITY)
                     Console.Write("inf");
                 else
                     Console.Write(sPath[i].distance);
-                char parent = vertexList[sPath[i].parentVert].lable;
+                string parent = vertexList[sPath[i].parentVert].vertName;
                 Console.Write("(" + parent + ") ");
             }
             Console.WriteLine();
